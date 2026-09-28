@@ -83,8 +83,6 @@ describe("MigrationReportView", () => {
 					.getAllByRole("columnheader")
 					.map((cell) => cell.textContent),
 		).toEqual(["Time", "Severity", "Phase", "Message", "Count", "Elapsed"]);
-		// Derive the expected time through the same formatter the view uses: the
-		// exact joiner ("at" vs comma) varies with the runtime ICU version.
 		const expectedTime = new Intl.DateTimeFormat("en-US", {
 			day: "numeric",
 			month: "short",
